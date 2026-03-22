@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Dia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-hearts">
+        <span>💕</span><span>💕</span><span>💕</span><span>💕</span><span>💘</span>
+        <span>💓</span><span>💜</span><span>🤍</span><span>💗</span><span>💞</span>
+        <span>💖</span><span>💝</span><span>❤️</span><span>💕</span><span>💘</span>
+        <span>💓</span><span>💜</span><span>🤍</span><span>💗</span><span>💞</span>
+        <span>💖</span><span>💝</span><span>❤️</span>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <h2>Seu Aniversário 🎉</h2>
+            <div class="button-group">
+                <button id="music-btn" class="btn btn-primary">
+                    <span class="btn-icon">🎵</span>
+                    <span class="btn-text">Tocar Música</span>
+                </button>
+                <div class="volume-control">
+                  <button id="vol-down" class="vol-btn">🔉</button>
+                  <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+                  <button id="vol-up" class="vol-btn">🔊</button>
+                </div>
+                <button id="games-btn" class="btn btn-secondary">
+                    <span class="btn-icon">🎮</span>
+                    <span class="btn-text">Minijogos</span>
+                </button>
+            </div>
+        </div>
+        <audio id="bg-music" src="audio/Po pi po - Hatsune  Miku .mp3"></audio>
+    </header>
+
+    <div id="games-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h3>Escolhe um jogo ae🎮</h3>
+            <div class="games-list">
+                <button class="game-card" data-game="memory">
+                    <span class="game-icon">🧠</span>
+                    <span class="game-title">Jogo da Memória</span>
+                </button>
+                <button class="game-card" data-game="urso">
+                    <span class="game-icon">🧸</span>
+                    <span class="game-title">Jogo do Urso</span>
+                </button>
+                <button class="game-card" data-game="quiz">
+                    <span class="game-icon">❓</span>
+                    <span class="game-title">Quiz pra saber se seu QI é de macaco ou não</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="memory-game" class="game-container" style="display:none;">
+        <div class="game-header">
+            <h4>Jogo da Memória</h4>
+            <button class="btn-close-game">&times;</button>
+        </div>
+        <div class="memory-board"></div>
+        <p class="memory-score">Pares encontrados: <span>0</span>/6</p>
+    </div>
+
+    <div id="video-vitoria-container" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: black; z-index: 10000; flex-direction: column; align-items: center; justify-content: center;">
+        <video id="video-vitoria" style="width: 100%; height: 100%; object-fit: cover;">
+            <source src="assets/jumpscare.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="urso-game" class="game-container" style="display:none;">
+        <div class="game-header">
+            <h4>Jogo do Urso 🧸</h4>
+            <button class="btn-close-game">&times;</button>
+        </div>
+        <div class="game" id="game">
+            <div id="goal">Pegue 3 moedas para ganhar o jogo!</div>
+            <div id="character">🧸</div>
+            <div id="obstacle">💣</div>
+            <div id="score">Pontos: 0</div>
+            <div id="coins">Moedas: 0</div>
+
+            <div id="gameOver">
+                Muito ruim, tenta dnv ae<br>
+                <div id="finalScore"></div>
+                <button id="restart-btn">Tentar Novamente</button>
+            </div>
+
+            <div id="winScreen">
+                Você conseguiu!!! (O mínimo)<br>
+                <div id="finalScoreWin"></div>
+                <button>Vsfd</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="quiz-game" class="game-container" style="display:none;">
+        <div class="game-header">
+            <h4>Quiz pra saber se seu QI é de macaco ou não</h4>
+            <button class="btn-close-game">&times;</button>
+        </div>
+        <div class="quiz-container">
+            <p id="quiz-question"></p>
+            <div class="quiz-options"></div>
+        </div>
+    </div>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Feliz aniversário Makita💕</h3>
+            <p>Desejo que o seu dia seja realmente especial. Que ele seja cheio de alegria, cheio de Makitas e todas as coisas boas que a vida pode oferecer. Você merece muita felicidade 💕</p>
+        </div>
+    </section>
+
+    <section class="mensagem-section">
+        <div class="surpresa-container">
+            <button id="surpresa-btn" class="btn btn-accent">
+                <span class="btn-icon">Clique Aqui💝</span>
+            </button>
+            <div id="mensagem" class="mensagem-box" style="display:none;">
+                <p>vai toma no cu💕</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>foi só isso msm, espero q tenha gostado :D</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
